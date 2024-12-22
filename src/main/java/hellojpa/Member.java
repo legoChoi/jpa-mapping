@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "members")
 public class Member {
 
     @Id @GeneratedValue()
@@ -33,4 +34,7 @@ public class Member {
     @ManyToMany
     @JoinTable(name = "member_product")
     private List<Product> products = new ArrayList<>();
+
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
 }
