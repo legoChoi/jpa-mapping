@@ -1,6 +1,6 @@
 package hellojpa;
 
-public class User {
+public class User extends BaseEntity {
 
     private Long id;
     private String password;
