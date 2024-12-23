@@ -11,6 +11,6 @@ public class Locker {
 
     private String name;
 
-    @OneToOne(mappedBy = "locker") // 양방향
+    @OneToOne(mappedBy = "locker", fetch = FetchType.LAZY) // 양방향
     private Member member;
 }

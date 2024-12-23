@@ -16,7 +16,7 @@ public class Member extends BaseEntity {
     @Column(name = "username")
     private String username;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
     private Team team;
 
@@ -24,7 +24,7 @@ public class Member extends BaseEntity {
      * 주 테이블에 외래키를 둬야할지 대상 테이블에 둬야할지
      * 후에 배울 프록시 관련하여 공부하고 판단
      */
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "locker_id")
     private Locker locker;
 
